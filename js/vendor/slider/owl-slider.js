@@ -36,24 +36,25 @@ $(document).on('ready', function() {
 
 
 
-// $(document).ready(function(){
-// 	$(".owl-carousel").owlCarousel({
-// 	  loop: true,
-// 	  margin: 10,
-// 	  nav: true,
-// 	  autoplay: true,
-// 	//   autoplayTimeout: 3000, 
-// 	  responsive: {
-// 		0: {
-// 		  items: 1
-// 		},
-// 		600: {
-// 		  items: 1
-// 		},
-// 		1000: {
-// 		  items: 1
-// 		}
-// 	  }
-// 	});
-//   });
+
+
+$(document).on('ready', function() {
+	
+	// Header CAROUSEL
+	  var team = $(".gallery-carousel");	 //my carousel is user defind
+	  team.owlCarousel({
+		items:1,
+        itemsDesktop:[1200,4],
+        // itemsDesktopSmall:[979,4],
+        itemsTablet:[768,1],
+		itemsMobile:[575,1],
+        pagination:true,
+        navigation:false,
+        navigationText:["",""],
+        autoPlay:true,
+		dots:false,
+		  
+	  });
+
+});
 

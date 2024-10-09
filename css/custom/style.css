@@ -1143,8 +1143,19 @@ nav {
 .section-dark-bg {
 	background-color:rgba(0, 0, 0,0.8);
 }
+.copy-right span{
+	color: skyblue !important;
+}
+
+.copy-right a{
+	color: #ffffff !important;
+}
 
 /* .about-img img{
 	border-radius: 10px !important;
 } */
 
+.game-img-1 .fluid-img{
+	width: 100%;
+	height: auto;
+}
