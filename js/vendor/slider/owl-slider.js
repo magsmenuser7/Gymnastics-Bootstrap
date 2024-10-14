@@ -4,6 +4,7 @@ $(document).on('ready', function() {
 	// Header CAROUSEL
 	  var team = $(".owl-carousel");	 //my carousel is user defind
 	  team.owlCarousel({
+		loop:true,
 		items:1,
         itemsDesktop:[1000,1],
         itemsDesktopSmall:[979,1],
@@ -14,6 +15,7 @@ $(document).on('ready', function() {
         navigationText:["",""],
         autoPlay:true,
 		dots:false,
+		rewind:false
 		  
 	  });
 		
@@ -26,7 +28,7 @@ $(document).on('ready', function() {
 		owl.trigger('owl.prev');
 	  })
 	  $(".play").click(function(){
-		owl.trigger('owl.play',500); //owl.play event accept autoPlay speed as second parameter
+		owl.trigger('play.owl.autoplay',[1000]); //owl.play event accept autoPlay speed as second parameter
 	  })
 	  $(".stop").click(function(){
 		owl.trigger('owl.stop');
@@ -45,7 +47,7 @@ $(document).on('ready', function() {
 	  team.owlCarousel({
 		items:1,
         itemsDesktop:[1200,4],
-        // itemsDesktopSmall:[979,4],
+        itemsDesktopSmall:[979,4],
         itemsTablet:[768,1],
 		itemsMobile:[575,1],
         pagination:true,

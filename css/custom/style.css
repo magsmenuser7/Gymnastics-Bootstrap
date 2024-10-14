@@ -1137,8 +1137,10 @@ nav {
 .item img{
 	width: 100% !important;
 }
-.img-fluid{
-	padding-top: 70px !important;
+.about-first-img{
+	margin-top: 70px;
+	border-radius: 10px !important;
+
 }
 .section-dark-bg {
 	background-color:rgba(0, 0, 0,0.8);
@@ -1158,4 +1160,66 @@ nav {
 .game-img-1 .fluid-img{
 	width: 100%;
 	height: auto;
+}
+.game-img-1 img{
+	height: 50vh !important;
+	border-radius: 10px;
+}
+.about-second-img{
+	margin-top: 270px !important;
+	border-radius: 10px;
+}
+.footer-links{
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+}
+.btn-rounded{
+	background-color: #000000 !important;
+}
+.btn-rounded:hover{
+	background-color: #3179ba !important;
+}
+.header-box {
+    background-color: #3179ba !important;
+    padding: 35px;
+    text-align: center;
+}
+.game-col-1 .game-img-1 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.team-box {
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 10px !important;
+	overflow: hidden !important;
+}
+.header-box {
+    background-color: #3179ba !important;
+    padding: 35px;
+    text-align: center;
+    border-radius: 10px;
+}
+.form-box {
+    background-color: #ffffff;
+    padding: 55px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 10px;
+}
+.theme-color {
+    color: #000000;
+}
+.text-color{
+	color: #000000 !important;
+}
+@media(min-width:320px) and (max-width:480px){
+	.about-img img{
+		margin-top: 0px !important;
+	}
+	.img-fluid {
+		padding-top: 10px !important;
+	}
 }
