@@ -1215,6 +1215,9 @@ nav {
 .text-color{
 	color: #000000 !important;
 }
+.section-bottom-margin{
+	margin-bottom: 37px !important;
+}
 @media(min-width:320px) and (max-width:480px){
 	.about-img img{
 		margin-top: 0px !important;
