@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Oswald, Open_Sans } from "next/font/google";
-import "./vendor/bootstrap.min.css";
-import "./vendor/font-awesome/css/font-awesome.min.css";
+import { Inter_Tight, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const oswald = Oswald({ variable: "--font-oswald", subsets: ["latin"], weight: ["200", "400", "500", "600", "700"] });
-const openSans = Open_Sans({ variable: "--font-open-sans", subsets: ["latin"] });
+const sans = Inter_Tight({ variable: "--font-sans", subsets: ["latin"], weight: ["300", "400", "500", "600"] });
+const serif = Instrument_Serif({ variable: "--font-serif", subsets: ["latin"], weight: "400", style: "italic" });
 
 export const metadata: Metadata = {
   title: "Gymnastics Association of Andhra Pradesh (GAAP) | Promoting Gymnastics in Guntur",
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${oswald.variable} ${openSans.variable}`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Arrow } from "./icons";
 
 const TO = "secretarygaap@gmail.com";
 
@@ -16,43 +17,53 @@ export default function ContactForm() {
       .map((k) => `${k.toUpperCase()}: ${f.get(k)}`)
       .join("\n");
     window.location.href = `mailto:${TO}?subject=${encodeURIComponent("Contact Form Query")}&body=${encodeURIComponent(body)}`;
-    e.currentTarget.reset();
     setSent(true);
   }
 
+  if (sent)
+    return (
+      <div className="form" aria-live="polite">
+        <div className="done">
+          <span className="check">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12.5 10 17.5 19 7" />
+            </svg>
+          </span>
+          <h3>You&apos;re <em>almost there.</em></h3>
+          <p className="lead">Your email app is opening with the message ready. Just hit send.</p>
+          <button className="btn btn-ghost" onClick={() => setSent(false)}>Write another</button>
+        </div>
+      </div>
+    );
+
   return (
-    <form className="form-res" onSubmit={onSubmit}>
-      <div className="row rowsafari">
-        <div className="col-lg-6 col-sm-6 col-md-6 col-6 form-div-1">
-          <i className="fa fa-user"></i>
-          <input type="text" name="fname" className="form-input" placeholder="First Name" aria-label="First name" required autoComplete="given-name" />
-        </div>
-        <div className="col-lg-6 col-sm-6 col-md-6 col-6 form-div-1">
-          <i className="fa fa-user"></i>
-          <input type="text" name="lname" className="form-input" placeholder="Last name" aria-label="Last name" required autoComplete="family-name" />
-        </div>
-      </div>
-      <div className="row rowsafari">
-        <div className="col-lg-6 col-sm-6 col-md-6 col-6 form-div-1">
-          <i className="fa fa-phone"></i>
-          <input type="tel" name="phone" className="form-input" placeholder="Your Number" aria-label="Phone number" required inputMode="numeric" pattern="[0-9+ ]{7,15}" autoComplete="tel" />
-        </div>
-        <div className="col-lg-6 col-sm-6 col-md-6 col-6 form-div-1">
-          <i className="fa fa-envelope"></i>
-          <input type="email" name="email" className="form-input" placeholder="Your Email" aria-label="Email" required autoComplete="email" />
-        </div>
-      </div>
-      <div className="row rowsafari">
-        <div className="col-lg-12 form-div-1">
-          <i className="fa fa-pencil"></i>
-          <textarea className="form-message" name="message" cols={40} rows={3} placeholder="Please Enter Message" aria-label="Message" required></textarea>
-        </div>
-      </div>
-      <div className="text-center">
-        <button className="boxed-btn btn-rounded" type="submit">Contact Us</button>
-      </div>
-      <div className="messageDiv" aria-live="polite">
-        {sent && <span className="sucessMessage">Opening your email app to send the message.</span>}
+    <form className="form" onSubmit={onSubmit}>
+      <h3>Send us a <em>message.</em></h3>
+      <label className="field">
+        <span>First name</span>
+        <input type="text" name="fname" required autoComplete="given-name" />
+      </label>
+      <label className="field">
+        <span>Last name</span>
+        <input type="text" name="lname" required autoComplete="family-name" />
+      </label>
+      <label className="field">
+        <span>Phone</span>
+        <input type="tel" name="phone" required inputMode="numeric" pattern="[0-9+ ]{7,15}" autoComplete="tel" />
+      </label>
+      <label className="field">
+        <span>Email</span>
+        <input type="email" name="email" required autoComplete="email" />
+      </label>
+      <label className="field full">
+        <span>Message</span>
+        <textarea name="message" rows={4} required></textarea>
+      </label>
+      <div className="form-foot">
+        <p>Opens your email app with the message ready to send.</p>
+        <button className="btn" type="submit">
+          Send message <span className="dot"><Arrow /></span>
+        </button>
       </div>
     </form>
   );
