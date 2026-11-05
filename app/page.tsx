@@ -5,6 +5,7 @@ import Gallery from "./gallery";
 import Effects from "./effects";
 import ContactForm from "./contact-form";
 import { Arrow, Mail, Phone, Pin } from "./icons";
+import { Beam, Ribbon, Tumble } from "./gymnast";
 
 import logo from "@/public/images/logo-one.png";
 import s13 from "@/public/images/slider-thirteen.webp";
@@ -66,6 +67,7 @@ export default function Home() {
       <Navbar links={links} />
 
       <header className="hero" id="home">
+        <Ribbon />
         <div className="wrap">
           <div className="hero-top">
             <h1 className="display" data-reveal>
@@ -86,6 +88,7 @@ export default function Home() {
           </div>
 
           <div className="hero-stage" data-reveal style={delay(0.2)}>
+            <Tumble />
             <div className="frame">
               <Slider slides={slides} />
             </div>
@@ -179,6 +182,7 @@ export default function Home() {
               Medals that <em>speak loudly.</em>
             </h2>
           </div>
+          <Beam />
           <div className="medals">
             {medals.map((m, i) => (
               <div key={m.label} className="medal" data-reveal style={{ ...delay(i * 0.1), "--tone": m.tone } as React.CSSProperties}>
